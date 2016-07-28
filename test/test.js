@@ -59,6 +59,7 @@ describe('union', function() {
     assert.isArray(result)
     assert.lengthOf(result, 3)
     assert.deepEqual([1, 2, 3], result)
+    assert.deepEqual([1, 2, false, {a: ''}], _.union([1, 2], 1, false, 1, {a: ''}))
   })
 })
 

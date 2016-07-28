@@ -30,7 +30,7 @@ export function isFunction(obj) {
 
 /**
  * creates a new array of unique values in the order of the
- * original provided arrays
+ * original provided arrays or values
  * @return {Array}
  */
 export function union() {
