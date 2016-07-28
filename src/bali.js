@@ -39,9 +39,9 @@ export function union() {
 }
 
 
-export function assign(target) {
+// export function assign(target) {
   
-}
+// }
 
 /**
  * creates a new object from the passed value by shallow clone
@@ -62,17 +62,17 @@ export function clone(obj) {
   }
 }
 
-export function cloneDeep() {
+// export function cloneDeep() {
 
-}
+// }
 
-export function cloneWithout() {
+// export function cloneWithout() {
 
-}
+// }
 
-export function cloneDeepWithout() {
+// export function cloneDeepWithout() {
 
-}
+// }
 
 
 

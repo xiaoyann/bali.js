@@ -56,7 +56,7 @@ describe('isFunction', function() {
 describe('union', function() {
   it('should return an array of unique values', function() {
     let result = _.union([1, 2], [3, 1, 2])
-    assert.typeOf(result, 'array')
+    assert.isArray(result)
     assert.lengthOf(result, 3)
     assert.deepEqual([1, 2, 3], result)
   })
