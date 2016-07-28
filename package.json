@@ -2,9 +2,10 @@
   "name": "bali.js",
   "version": "1.0.0",
   "description": "积累常用工具函数。因为今天与同事在讨论巴厘岛，所以取名 bali.js.",
-  "main": "index.js",
+  "main": "lib/bali.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register",
+    "test:watch": "npm test -- --watch",
     "build": "./node_modules/.bin/babel src -d lib"
   },
   "repository": {
