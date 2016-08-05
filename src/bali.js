@@ -120,8 +120,36 @@ export function cloneDeep(obj) {
   }
 }
 
+/**
+ * [cloneWithPath description]
+ * @param  {[type]} obj   [description]
+ * @param  {[type]} path  [description]
+ * @param  {[type]} _path [description]
+ * @return {[type]}       [description]
+ */
+export function cloneWithPath(obj, path, _path) {
+  let result;
+  
+  if (isArray(obj)) {
+    result = [];
+  } else if (isObject(obj)) {
+    result = {};
+  } else {
+    return obj;
+  }
 
+  for (let k in obj) {
+    _path = _path ? _path + '.' + k : k;
+    if (path.indexOf(_path) === 0) {
+      result[k] = cloneWithPath(obj[k], path, _path);
+    } else {
+      result[k] = obj[k];
+    }
+    _path = '';
+  }
 
+  return result;
+}
 
 
 

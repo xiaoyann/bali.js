@@ -218,7 +218,40 @@ describe('cloneDeep', function() {
 })
 
 
+describe('cloneWithPath', function() {
+  let original = {
+    a: {
+      b: [{c: ''}]
+    },
+    b: {
+      c: 'c'
+    }
+  }
+  let path = 'a.b.0';
+  let actual = _.cloneWithPath(original, path);
 
+  it('The structure of actual should be same as the original value', function() {
+    assert.deepEqual(actual, original)
+  })
+
+  it('The actual should not be equal the original value', function() {
+    assert.notStrictEqual(actual, original)
+  })
+
+  it('clone only the value which in the path', function() {
+    assert.notStrictEqual(actual.a.b[0], original.a.b[0])
+    assert.strictEqual(actual.a.b[0].c, original.a.b[0].c)
+    assert.strictEqual(actual.b, original.b)
+  })
+
+  it('Should return the passed value directly when it is neither an Object nor an Array', function() {
+    assert.strictEqual(1, _.cloneWithPath(1))
+    assert.strictEqual(null, _.cloneWithPath(null))
+    assert.strictEqual(false, _.cloneWithPath(false))
+    let func = function() {}
+    assert.strictEqual(func, _.cloneWithPath(func))
+  })
+});
 
 
 
