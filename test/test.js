@@ -254,7 +254,50 @@ describe('cloneWithPath', function() {
 });
 
 
+describe('numScale', function() {
+  it('(0.1, -1) = 0.01', function() {
+    assert.strictEqual(0.01, _.numScale(0.1, -1))
+  })
+  it('(0.1, 0) = 0.1', function() {
+    assert.strictEqual(0.1, _.numScale(0.1, 0))
+  })
+  it('(0.1, 1) = 1', function() {
+    assert.strictEqual(1, _.numScale(0.1, 1))
+  })
+  it('(0.1, 2) = 10', function() {
+    assert.strictEqual(10, _.numScale(0.1, 2))
+  })
+  it('(1, 1) = 10', function() {
+    assert.strictEqual(10, _.numScale(1, 1))
+  })
+  it('(1.111, 2) = 111.1', function() {
+    assert.strictEqual(111.1, _.numScale(1.111, 2))
+  })
+  it('(1.111, 5) = 111100', function() {
+    assert.strictEqual(111100, _.numScale(1.111, 5))
+  })
+  it('(111.1, -2) = 1.111', function() {
+    assert.strictEqual(1.111, _.numScale(111.1, -2))
+  })
+  it('(111.1, -5) = 0.001111', function() {
+    assert.strictEqual(0.001111, _.numScale(111.1, -5))
+  })
+  it('(1306377.64, 2) = 130637764', function() {
+    assert.strictEqual(130637764, _.numScale(1306377.64, 2))
+  })
+})
 
+describe('accAdd', function() {
+  it('(0.1, 0.2) = 0.3', function() {
+    assert.strictEqual(0.3, _.accAdd(0.1, 0.2))
+  })
+  it('(2.22, 0.1) = 2.32', function() {
+    assert.strictEqual(2.32, _.accAdd(2.22, 0.1))
+  })
+  it('(11, 11) = 22', function() {
+    assert.strictEqual(22, _.accAdd(11, 11))
+  })
+})
 
 
 
