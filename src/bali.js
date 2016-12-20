@@ -215,3 +215,11 @@ export function accAdd(num1, num2) {
   return numScale(numScale(num1, multiple) + numScale(num2, multiple), multiple * -1);
 }
 
+/**
+ * 两数相减
+ */
+export function accSub(num1, num2) {
+  const multiple = Math.max(getExponent(num1), getExponent(num2));
+  return numScale(numScale(num1, multiple) - numScale(num2, multiple), multiple * -1);
+}
+

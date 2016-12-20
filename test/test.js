@@ -299,6 +299,19 @@ describe('accAdd', function() {
   })
 })
 
+describe('accSub', function() {
+  it('(0.2, 0.1) = 0.1', function() {
+    assert.strictEqual(0.1, _.accSub(0.2, 0.1))
+  })
+  it('(2.22, 0.1) = 2.12', function() {
+    assert.strictEqual(2.12, _.accSub(2.22, 0.1))
+  })
+  it('(11, 11) = 0', function() {
+    assert.strictEqual(0, _.accSub(11, 11))
+  })
+})
+
+
 
 
 
