@@ -167,6 +167,8 @@ function getExponent(num) {
  * @m   放大或缩小的倍数，为正表示小数点向右移动，表示放大；为负反之
  */
 export function numScale(num, m) {
+  const isPositive = num >= 0
+  num = Math.abs(num)
   // 拆分整数、小数部分
   var parts = num.toString().split('.');
   // 原始值的整数位数
@@ -186,6 +188,7 @@ export function numScale(num, m) {
   } else {
     // 补多少个零：m - 原始值的整数位数
     let zeros = Math.abs(m) - integerLen;
+    
     while (zeros > 0) {
       zeros -= 1;
       parts.unshift(0);
@@ -202,8 +205,10 @@ export function numScale(num, m) {
   // 计算出的小数点位置可能为负，这个负数应该正好是补零的
   // 个数，所以小数点位置应该为 0
   parts.splice(index > 0 ? index : 0, 0, '.');
-
-  return parseFloat(parts.join(''));
+  
+  const result = parseFloat(parts.join(''));
+  
+  return isPositive ? result : result * -1;
 }
 
 

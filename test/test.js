@@ -309,6 +309,9 @@ describe('accSub', function() {
   it('(11, 11) = 0', function() {
     assert.strictEqual(0, _.accSub(11, 11))
   })
+  it('(0.5, 0.583) = -0.083', function() {
+    assert.strictEqual(-0.083, _.accSub(0.5, 0.583))
+  })
 })
 
 
