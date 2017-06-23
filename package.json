@@ -1,6 +1,6 @@
 {
   "name": "bali.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "积累常用工具函数。因为今天与同事在讨论巴厘岛，所以取名 bali.js.",
   "main": "lib/bali.js",
   "scripts": {
